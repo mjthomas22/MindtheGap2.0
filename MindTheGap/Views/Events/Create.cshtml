@@ -1,0 +1,227 @@
+﻿@model MindTheGap.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="jumbotron jumbotron-sm" style="background-color:#999999; box-shadow: rgba(0,0,0,0.18) 0px 2px 4px; font-family: 'Questrial', sans-serif; color:white; text-shadow: 0, 1px, 2px, rgba(0,0,0,0.20);">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1" style="text-align:center;text-shadow: rgba(0,0,0,0.18) 2px 4px 6px;">
+                    Add to your schedule
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal" id="createForm">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <h5 class="control-label col-md-3">Event Name</h5>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.summary, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.summary, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @*<label for=" comment">Notes:</label>
+                            <textarea class="form-control" rows="5"></textarea>*@
+                        <h5 class="control-label col-md-3 ">Notes</h5>
+                        <div class="col-md-9">
+                            @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @rows = 10 } })
+                            @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.colorId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.colorId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.colorId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        <h5 class="control-label col-md-3">Start Date & Time</h5>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.starttime, new { htmlAttributes = new { @class = "form-control", @placeholder = "mm/dd/yyyy hh:mm (24 hour format)" } })
+                            @Html.ValidationMessageFor(model => model.starttime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h5 class="control-label col-md-3">End Date & Time</h5>
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.endtime, new { htmlAttributes = new { @class = "form-control", @placeholder = "mm/dd/yyyy hh:mm (24 hour format)" } })
+                            @Html.ValidationMessageFor(model => model.endtime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.recurrence, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.recurrence, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.recurrence, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.reminders, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.reminders)
+                                    @Html.ValidationMessageFor(model => model.reminders, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.completed, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.completed)
+                                    @Html.ValidationMessageFor(model => model.completed, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default createBtn" style="background-color: #4c5c68 !important" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-5" style="text-align:center;">
+            <h2 id="toDolist" style="background-color:#999999; text-shadow: rgba(0,0,0,0.18) 0px 2px 4px; font-family: 'Questrial', sans-serif; color:white; text-shadow: rgba(0,0,0,0.18) 2px 4px 6px;">To Do List</h2>
+            <form name="checkListForm" style="font-family: 'Questrial', sans-serif;">
+                <input type="text" name="checkListItem" placeholder="Add Item..." />
+            </form>
+            <i id="add" class="btn btn-info fa fa-plus"></i>
+            <i id="clear" title="Clear checked items" class="btn btn-default fa fa-minus"></i>
+            <br /><br />
+            <div class="list" style="font-family: 'Questrial', sans-serif;"></div>
+        </div>
+        <div style="text-align:center;">
+            <span>
+                <button id="gaps-button" class="btn btn-info" style="box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;">Find Gaps</button>
+                <button id="show-gaps-button" class="btn btn-info" style="box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;">Show Gaps</button>
+            </span>
+        </div>
+        <div class="row showGaps">
+            <span id="gaps"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $(document).ready(function () {
+            var getEvents = [];
+            //getting information from the database
+            //notice the get request
+            $.ajax({
+                type: "GET",
+                url: "GetCalendarDatabase",
+                success: function (Data) {
+                    $.each(Data, function (key, value) {
+                        //object
+                        getEvents.push({
+                            // title/description/start/end/color are full calendar keywords must have
+                            //summary/description/starttime/endtime/color are fields in yr table
+                            //MOMENT IS SPECIAL I SENT YOU A LINK
+                            title: value.summary,
+                            description: value.description,
+                            start: moment(value.starttime),
+                            end: moment(value.endtime),
+                            color: value.colorId,
+                            editable: true,
+                            startEditable: true,
+                            durationEditable: true,
+                            resourceEditable: true
+                        });
+                    })
+                    GenerateCalendar(getEvents);
+                },
+                error: function (error) {
+                    alert('failed');
+                }
+            })
+            var today = Date.now()
+            function GenerateCalendar(getEvents) {
+                $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'agendaDay,agendaWeek,month'
+                    },
+                    defaultDate: today,
+                    defaultView: 'agendaDay',
+                    events: getEvents
+                })
+            }
+        })
+    });
+</script>
+
+<script>
+        $(document).ready(function () {
+            $("#show-gaps-button").click(
+                function () {
+                    $('.messageDiv').remove();
+                    $.get("@Url.Action("TestJson","Events")", function (serverResponse) {
+        var jsonTest = JSON.parse(serverResponse);
+        console.log(jsonTest);
+
+        $.each(jsonTest, function (inx, val) {
+            var userNameClass = ["userName"];
+            var h6 = $("<h6>", { id: "h6" + inx, "class": userNameClass });
+
+            var messageClass = ["message"];
+            var p = $("<p>", { id: "p" + inx, "class": messageClass });
+
+            var divClass = ["messageDiv col-md-2"];
+            var div = $("<div>", { id: "div" + inx, "class": divClass });
+
+            h6.html("<h6 class=\"userName\">" + val.GapStart + "</h6>");
+            p.html("<p class=\"message\">" + val.GapEnd + "</p>");
+            div.html(h6.html() + p.html());
+
+            $("#gaps").append(div);
+            console.log(serverResponse);
+
+
+        });
+
+    });
+                });
+
+        });
+</script>
+
+<script type="text/javascript">
+
+    var findGap = '@Url.Action("Gaps", "Events")';
+
+</script>
+
+<div>
+    @Html.ActionLink("Back to List", "Daily")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

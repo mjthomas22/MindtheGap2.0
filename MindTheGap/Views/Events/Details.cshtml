@@ -1,0 +1,106 @@
+﻿@model MindTheGap.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.colorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.colorId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.starttime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.starttime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endtime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endtime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recurrence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recurrence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reminders)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reminders)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.completed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.completed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interest.userId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interest.userId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.eventId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

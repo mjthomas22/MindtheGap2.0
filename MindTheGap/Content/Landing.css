@@ -1,0 +1,101 @@
+﻿body {
+    margin: 0;
+    padding-top: 0px;
+}
+
+.inner {
+    padding-top: 150px;
+}
+
+.navbar {
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+    padding-top: 10px;
+}
+
+    .navbar li {
+        color: #000
+    }
+
+.navbar-default {
+    background: transparent;
+    /*background-image: none;*/
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.landing {
+    background-image: url('Images/workspace1.jpeg');
+    background-size: cover;
+    padding: 0px 0px 200px 0px;
+    height: 800px;
+    width: 100%;
+    /*Paralax Scrolling*/
+    /*background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;*/
+    /*Border*/
+    border-color: #6caa24;
+}
+
+.ghost-button {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    padding: 15px 0px 0px 0px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+
+}
+
+    .ghost-button:hover,
+    .ghost-button:active {
+        /*background-color: #fff;*/
+        background-color: rgba(255, 255, 255, 0.4);
+        color: #000;
+        text-decoration: none;
+    }
+
+.landing .container {
+    padding-top: 40px;
+    margin-top:170px;
+    text-align:right;
+}
+
+.howItWorks .h1 {
+    padding: 20px 0px 10px 0px;
+}
+
+
+
+
+
+ 
+
+/*div.transbox {
+  margin: 30px;
+  background-color: #ffffff;*/
+  /*border: 1px solid black;*/
+  /*opacity: 0.1;
+  filter: alpha(opacity=10);*/ /* For IE8 and earlier */
+/*}
+
+div.transbox h1 {
+  margin: 5%;
+  font-weight: bold;
+  color: #ffffff;
+}
+div.transbox h2 {
+  margin: 5%;
+  font-weight: bold;
+  color: #ffffff;
+}
+div.transbox a {
+  margin: 5%;
+  font-weight: bold;
+  color: #ffffff;
+}*/

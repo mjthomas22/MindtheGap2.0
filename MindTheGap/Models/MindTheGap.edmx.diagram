@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7033890a279b4c2f8475dd3d3d684497" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="MindTheGapModel.Event" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MindTheGapModel.Interest" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MindTheGapModel.Progress" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MindTheGapModel.UserLevel" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MindTheGapModel.FK_Event_Interest" ManuallyRouted="false" />
+        <AssociationConnector Association="MindTheGapModel.FK_Progress_Interest" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MindTheGapModel.C__MigrationHistory" Width="1.5" PointX="15.625" PointY="4.75" />
+        <EntityTypeShape EntityType="MindTheGapModel.AspNetRole" Width="1.5" PointX="9.5" PointY="0.5" />
+        <EntityTypeShape EntityType="MindTheGapModel.AspNetUserClaim" Width="1.5" PointX="11" PointY="8" />
+        <EntityTypeShape EntityType="MindTheGapModel.AspNetUserLogin" Width="1.5" PointX="11" PointY="10.75" />
+        <EntityTypeShape EntityType="MindTheGapModel.AspNetUser" Width="1.5" PointX="8.75" PointY="3" />
+        <EntityTypeShape EntityType="MindTheGapModel.sysdiagram" Width="1.5" PointX="15.625" PointY="7.75" />
+        <AssociationConnector Association="MindTheGapModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MindTheGapModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MindTheGapModel.FK_Event_AspNetUsers" />
+        <AssociationConnector Association="MindTheGapModel.FK_Interest_AspNetUsers" />
+        <AssociationConnector Association="MindTheGapModel.FK_Progress_AspNetUsers" />
+        <AssociationConnector Association="MindTheGapModel.FK_UserLevel_AspNetUsers" />
+        <AssociationConnector Association="MindTheGapModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="MindTheGapModel.Gap" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

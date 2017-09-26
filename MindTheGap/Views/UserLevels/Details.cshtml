@@ -1,0 +1,50 @@
+﻿@model MindTheGap.Models.UserLevel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserLevel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.userLevel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userLevel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.xp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.xp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.xpNeeded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.xpNeeded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.levelId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

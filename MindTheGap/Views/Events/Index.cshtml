@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MindTheGap.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron jumbotron-sm" style="background-color:#999999; box-shadow: rgba(0,0,0,0.18) 0px 2px 4px; font-family: 'Questrial', sans-serif; color:white; text-shadow: 0, 1px, 2px, rgba(0,0,0,0.20);">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1" style="text-align:center;text-shadow: rgba(0,0,0,0.18) 2px 4px 6px;">
+                    Edit your schedule
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+
+
+    <div class="col-xs-3" style="text-align:center; min-height:530px;">
+        <div class="text">
+            <div class="content-text">
+                <h3 class="lead">
+                    @Html.DisplayFor(modelItem => item.summary)
+                </h3>
+                <p>
+                    @Html.DisplayFor(modelItem => item.description)
+                    <br> @Html.DisplayFor(modelItem => item.starttime)
+                    <br />@Html.DisplayFor(modelItem => item.endtime)
+                </p>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.eventId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.eventId })
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+        $(document).ready(function () {
+            $("#show-gaps-button").click(
+                function () {
+                    $('.messageDiv').remove();
+                    $.get("@Url.Action("TestJson","Events")", function (serverResponse) {
+        var jsonTest = JSON.parse(serverResponse);
+        console.log(jsonTest);
+
+        $.each(jsonTest, function (inx, val) {
+            var userNameClass = ["userName"];
+            var h6 = $("<h6>", { id: "h6" + inx, "class": userNameClass });
+
+            var messageClass = ["message"];
+            var p = $("<p>", { id: "p" + inx, "class": messageClass });
+
+            var divClass = ["messageDiv col-md-2"];
+            var div = $("<div>", { id: "div" + inx, "class": divClass });
+
+            h6.html("<h6 class=\"userName\">" + val.GapStart + "</h6>");
+            p.html("<p class=\"message\">" + val.GapEnd + "</p>");
+            div.html(h6.html() + p.html());
+
+            $("#gaps").append(div);
+            console.log(serverResponse);
+
+
+        });
+
+    });
+                });
+
+        });
+</script>
+
+<script type="text/javascript">
+
+    var findGap = '@Url.Action("Gaps", "Events")';
+
+</script>
+

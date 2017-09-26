@@ -1,0 +1,104 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--Collapsing Modal-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--Font Style Sheet-->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Didact+Gothic|Encode+Sans+Semi+Expanded|Hind+Madurai|Julius+Sans+One|Mandali|NTR|Pavanam|Questrial|Ramabhadra|Tauri|Wire+One" rel="stylesheet">
+    <!--Bootstrap Style Sheets-->
+    <link href="Style.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Landing.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Landing.css" rel="stylesheet" />
+    <!--JavaScript Sheets-->
+    <script src="~/Scripts/MyScript.js"></script>
+    <script src="~/Scripts/MyScript2.js"></script>
+    <script src="~/Scripts/LandingScript.js"></script>
+</head>
+
+<body>
+    <!-- Navbar with Sign-in Ability -->
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" style="font-family: 'Questrial', sans-serif; font:16px; text-shadow: 0, 1px, 2px, rgba(0,0,0,0.20);">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://localhost:26262/Home/Index" style="color:white;">MIND THE GAP</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                    <ul class="nav navbar-nav navbar-right">
+
+
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
+    </header>
+    @*<div class="container">
+        <div class="hero-image" style="margin-top:100px;font-size:50px;font-family: 'Covered By Your Grace', cursive;text-align:center;height:500px;">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <div id="welcome_msg">
+                Hi.
+                <br />My name is Adam Drue King...
+                <br />I'm a full-stack software developer...
+                <br />I have a passion for front end and UX design...
+                <br />Thanks for looking at my work.
+                <div class="banana"></div>*@<!--snippet-->
+    @*</div>
+
+        </div>
+        </div>
+        <br />*@
+    <section class="landing">
+        <img class="img-responsive" />
+        <div class="row" style="margin-right:0px;">
+            <div class="container">
+                <div class="col-md-11 inner">
+                    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
+                    @*<div id="welcome_msg">*@
+                    @*<div class="background">
+                        <div class="transbox">*@
+                    <h1 style="color:white; font-size: 30px; font-family: 'Questrial', sans-serif; text-shadow: rgba(0,0,0,0.18) 0px 2px 4px">Mind The Gap In Your Day</h1>
+
+                    <a class="ghost-button" href="/Events/Daily" style="color:white; font-family: 'Questrial', sans-serif">Get Started</a>
+                    @*<h2 style="color:white; font-size: 30px; font-family: 'Questrial', sans-serif;text-shadow: rgba(0,0,0,0.18) 0px 2px 4px">WORK-LIFE BALANCE APP</h2>*@
+                    <br />
+                    <br />
+                    <div class="banana"></div><!--snippet-->
+                </div>
+
+                @*</div>
+                    </div>*@
+            </div>
+        </div>
+    </section>
+    <hr />
+
+    <footer style="text-align:center">
+        <p>&copy; @DateTime.Now.Year - Mind the Gap</p>
+    </footer>
+
+</body>
+</html>
